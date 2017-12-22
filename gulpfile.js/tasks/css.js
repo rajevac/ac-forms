@@ -30,7 +30,7 @@ var cssTask = function(){
       this.emit('end');
     }))
     .pipe(sass({
-        includePaths: config.tasks.css.librariesSource
+        includePaths: config.tasks.css.cssLibrariesSource
     }))
     .pipe(autoprefixer({
     browsers: config.tasks.css.browserSupport,

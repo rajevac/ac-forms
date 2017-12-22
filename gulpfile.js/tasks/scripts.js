@@ -49,7 +49,7 @@ var jsTask = function() {
   .pipe(notify({message: 'JS task complete'}));
 
   // Merges and minifies JS Library files
-  gulp.src(config.tasks.js.jsLibrarySourceFiles)
+  gulp.src(config.tasks.js.jsLibrariesSource)
   .pipe(sourcemaps.init({
     largeFile: true
   }))

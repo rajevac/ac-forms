@@ -9,7 +9,7 @@
       "browserSupport" :        ["last 2 versions"],
       "minifyCssOptions":       {"compatibility": "ie8"},
       "sourceFile":             "source/scss/app.scss",
-       "librariesSource":  [
+       "cssLibrariesSource":  [
           "node_modules/foundation-sites/scss"
         ],
       "destinationDirectory":   "public/assets/css/",
@@ -26,7 +26,7 @@
       "productionJs":           "app.min.js",
       "jsLibraries":            "utilities.js",
       "jsLibrariesMinified":    "utilities.min.js",
-      "jsLibrarySourceFiles":   [],
+      "jsLibrariesSource":   [],
       "sourcemapDest":          ".",
       "sourcemapSourceRoot":      "source/js/",
       "watchFiles":             "source/js/**/*.js",
