@@ -10,15 +10,23 @@
 //        alert("Doesn't Work");
 //    }
 //}
-
-
 $(document).ready(function(){
     //====== initiate Foundation =======
     $(document).foundation();
     console.log('app.js connected and Foundation Sctips is running!');
+
     // ====== show - hide main navigation ========
     (function() {
-        var docEl = $(document);
+        var didScroll;
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
         var pageBody = $('body');
         var mainNav = $('#mainNavWrap');
         var mainNavHeight = mainNav.outerHeight();
@@ -27,8 +35,8 @@ $(document).ready(function(){
         var tripNavEl = $('#tripDetailsNavWrap');
         var contentBelowTripNavEl = $('#contentBelowTripNav');
         var tripNavDocPosition = 0;
-        docEl.on('scroll', function() {
-            var currentScrollTop = $(this).scrollTop(); // This has performance issue FIX IT
+        function hasScrolled() {
+            var currentScrollTop = $(this).scrollTop();
             if(tripNavDocPosition === 0 ) {
                 tripNavDocPosition = tripNavEl.offset().top;
             }
@@ -43,14 +51,14 @@ $(document).ready(function(){
             }
             if(currentScrollTop > tripNavDocPosition) {
                 tripNavEl.addClass('fixTripNav');
-                contentBelowTripNavEl.css('padding-top', tripNavEl.outerHeight());
+                contentBelowTripNavEl.css('padding-top', tripNavEl.outerHeight());// move to CSS
             } else if(currentScrollTop + mainNavHeight < tripNavDocPosition) {
                 tripNavEl.removeClass('fixTripNav');
                 tripNavEl.removeAttr('style');
                 contentBelowTripNavEl.removeAttr('style');
             }
             lastScrollTop = currentScrollTop;
-        });
+        }
     })();
 });
 
