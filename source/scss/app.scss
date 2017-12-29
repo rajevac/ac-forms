@@ -135,7 +135,6 @@
 @import '_base/variables';
 @import '_base/mixins';
 @import '_base/typography';
-@import '_base/navigation';
 
 /*------------------------------------*\
   #MODULES
@@ -143,10 +142,7 @@
 @import '_modules/buttons';
 @import '_modules/footer';
 @import '_modules/forms';
-@import '_modules/header';
-@import '_modules/pagination';
-@import '_modules/sidebar';
-@import '_modules/slider';
+@import '_modules/navigation';
 
 /*------------------------------------*\
   #PAGES

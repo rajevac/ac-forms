@@ -1,0 +1,35 @@
+a:link {
+  transition: all 0.3s ease;
+}
+
+.ac-btn {
+  background: $ac-yellow;
+  background-image: -webkit-linear-gradient(top, $ac-yellow, $ac-orange);
+  background-image: -moz-linear-gradient(top, $ac-yellow, $ac-orange);
+  background-image: -ms-linear-gradient(top, $ac-yellow, $ac-orange);
+  background-image: -o-linear-gradient(top, $ac-yellow, $ac-orange);
+  background-image: linear-gradient(to bottom, $ac-yellow, $ac-orange);
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  color: $ac-text;
+  padding: 16px 40px 18px 40px;
+  border: solid $ac-brown 1px;
+  text-decoration: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.ac-btn:hover {
+  color: $ac-text;
+  background: $ac-orange;
+  background-image: -webkit-linear-gradient(top, darken($ac-yellow,20%), darken($ac-orange, 5%));
+  background-image: -moz-linear-gradient(top, darken($ac-yellow,20%), darken($ac-orange, 5%));
+  background-image: -ms-linear-gradient(top, darken($ac-yellow,20%), darken($ac-orange, 5%));
+  background-image: -o-linear-gradient(top, darken($ac-yellow,20%), darken($ac-orange, 5%));
+  background-image: linear-gradient(to bottom, darken($ac-yellow,20%), darken($ac-orange, 5%));
+  text-decoration: none;
+}

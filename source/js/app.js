@@ -15,6 +15,12 @@ $(document).ready(function(){
     $(document).foundation();
     console.log('app.js connected and Foundation Sctips is running!');
 
+    // ====== menu icon animation ========
+    $('#menu-link').on('click', function (event) {
+        event.preventDefault();
+        $('#mainNavWrap').toggleClass('active-toggle');
+    });
+
     // ====== show - hide main navigation ========
     (function() {
         var didScroll;

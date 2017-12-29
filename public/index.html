@@ -15,7 +15,7 @@
 </div>
 -->
 
-    <header id="mainNavWrap" style="background-color: beige;">
+    <header id="mainNavWrap">
         <div class="row">
                 <ul class="client-login hide-for-small-only">
                     <li><a href="">Agents</a></li>
@@ -24,16 +24,24 @@
                 <div class="masthead">
                     <a href="index.html"><img src="assets/img/ac-logo.svg" alt="Logo"></a>
                     <ul>
-                        <li><a href="tel:1.800.363.7566"><span class="ac-icons"></span>+1.800.363.7566</a></li>
-                        <li class="hide-for-small-only"><a href=""><span class="ac-icons"></span>Brochures</a></li>
+                        <li class="ac-phone"><a href="tel:1.800.363.7566">+1.800.363.7566</a></li>
+                        <li class="hide-for-small-only ac-brochure"><a href="">Brochures</a></li>
                         <li data-responsive-toggle="mainNav" data-hide-for="large">
+                            <div class="menu-wrap">
+                                <a href="#" id="menu-link" data-toggle>
+                                    <span>menu</span>
+                                    <span class="menu-icon"></span>
+                                </a>
+                            </div>
+                            <!--
                             <button data-toggle><span class="ac-menu-icons"></span>Menu</button>
+                            -->
                         </li>
                     </ul>
                 </div>
-                <nav style="background-color: burlywood;" id="mainNav">
+                <nav id="mainNav">
                     <ul class="vertical large-horizontal menu" data-responsive-menu="accordion large-dropdown">
-                        <li><a href="#">Home</a></li>
+                        <li class="current-section"><a href="#">Home</a></li>
                         <li class="is-dropdown-submenu-parent">
                             <a href="#">Trips</a>
                             <ul class="vertical menu">
@@ -147,7 +155,7 @@
                         <li><a href="">Agents</a></li>
                         <li><a href="">Sign in</a></li>
                     </ul>
-                    <a href="#">Find a Trip</a>
+                    <a href="#" class="ac-btn">Find a Trip</a>
                 </nav>
         </div>
     </header>
