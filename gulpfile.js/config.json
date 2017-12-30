@@ -39,7 +39,7 @@
       }
     },
     "imagemin": {
-      "sourceImages": "source/img/*",
+      "sourceImages": "source/img/**",
       "optimizedImages": "public/assets/img",
       "sassWatch": "source/img/**.*"
     },

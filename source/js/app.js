@@ -15,10 +15,21 @@ $(document).ready(function(){
     $(document).foundation();
     console.log('app.js connected and Foundation Sctips is running!');
 
+
+    var mainNav = $('#mainNavWrap');
     // ====== menu icon animation ========
     $('#menu-link').on('click', function (event) {
-        event.preventDefault();
-        $('#mainNavWrap').toggleClass('active-toggle');
+        //event.preventDefault();
+        event.stopPropagation();
+        mainNav.toggleClass('active-toggle');
+        $('body').toggleClass('noScroll');
+    });
+    $(document).click( function(){
+        if(mainNav.hasClass('active-toggle') && !$(event.target).is("#mainNav a, #menu-link")) {
+            mainNav.toggleClass('active-toggle');
+            $('#mainNav').css('display', 'none');
+            $('body').toggleClass('noScroll');
+        }
     });
 
     // ====== show - hide main navigation ========
@@ -34,7 +45,6 @@ $(document).ready(function(){
             }
         }, 250);
         var pageBody = $('body');
-        var mainNav = $('#mainNavWrap');
         var mainNavHeight = mainNav.outerHeight();
         pageBody.css('padding-top', mainNavHeight); // This MUST BE be moved to css
         var lastScrollTop = 0;

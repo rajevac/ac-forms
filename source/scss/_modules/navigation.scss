@@ -12,38 +12,26 @@
   }
 }
 
-// ====== menu icon ========
+// ====== Menu Icon and Animation ========
 
 #menu-link {
+  font-size:90%;
   display: inline-block;
   position: relative;
-  padding: 12px 30px 12px 0;
+  padding: 0 30px 0 0;
   text-transform: uppercase;
   text-decoration: none;
-  color: #000;
-  font-size: .85em;
-  -webkit-transition-property: color .5s ease-in-out;
-  -moz-transition-property: color .5s ease-in-out;
-  -o-transition-property: color .5s ease-in-out;
-  -ms-transition-property: color .5s ease-in-out;
+  color: $ac-text;
   transition: color .5s ease-in-out;
+  @include breakpoint(small only) {
+    span:first-child {
+      display: none;
+    }
+  }
 }
 
-#mainNavWrap.active-toggle #menu-link {
-  color: transparent;
-  -webkit-transition-property: color .5s ease-in-out;
-  -moz-transition-property: color .5s ease-in-out;
-  -o-transition-property: color .5s ease-in-out;
-  -ms-transition-property: color .5s ease-in-out;
-  transition: color .5s ease-in-out;
-
-}
-
-
-
-
-#menu-link .menu-icon, #menu-link .menu-icon:before, #menu-link .menu-icon:after {
-  background-color: #000;
+#menu-link .ac-menu-icon, #menu-link .ac-menu-icon:before, #menu-link .ac-menu-icon:after {
+  background-color: $ac-text;
   border-radius: 2px;
   width:22px;
   height: 2px;
@@ -51,70 +39,50 @@
   position: absolute;
   content: '';
   right: 0;
-  top: 20px;
-
-  -webkit-transition-property: all .5s ease-in-out;
-  -moz-transition-property: all .5s ease-in-out;
-  -o-transition-property: all .5s ease-in-out;
-  -ms-transition-property: all .5s ease-in-out;
+  top: 12px;
   transition: all .5s ease-in-out;
-
+  @include breakpoint(small only) {
+    top: -8px;
+  }
 }
-
-
-
-#mainNavWrap.active-toggle #menu-link .menu-icon:before {
+#mainNavWrap.active-toggle #menu-link .ac-menu-icon:before {
   top: 0px;
-
-  -webkit-transition-property: rotate(45deg);
-  -moz-transition-property: rotate(45deg);
-  -o-transition-property: rotate(45deg);
-  -ms-transition-property: rotate(45deg);
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-
 }
-
-
-#mainNavWrap.active-toggle #menu-link .menu-icon:after {
+#mainNavWrap.active-toggle #menu-link .ac-menu-icon:after {
   top: 0px;
-  -webkit-transition-property: rotate(-45deg);
-  -moz-transition-property: rotate(-45deg);
-  -o-transition-property: rotate(-45deg);
-  -ms-transition-property: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-
-
-
-#mainNavWrap.active-toggle #menu-link .menu-icon {
+#mainNavWrap.active-toggle #menu-link .ac-menu-icon {
   background-color: transparent;
 }
-
-
-#menu-link .menu-icon:before {
+#menu-link .ac-menu-icon:before {
   top: -7px;
 }
 
-#menu-link .menu-icon:after {
+#menu-link .ac-menu-icon:after {
   top: 7px;
 }
-#mainNavWrap.active-toggle .main-nav {
-  max-height: 35em;
-  /*
-   max-height: 50em;
-  */
+
+// ======= Prevent Scrolling on mobile when menu is opened ========
+body.noScroll {
+  @include breakpoint(medium down) {
+    overflow: hidden;
+  }
 }
-
-
 
 // ======= Main Navigation ========
 .hideNav {
   transform: translate3d(0,-100%,0);
 }
 #mainNavWrap {
-  font-size: 90%;
+  font-size: 80%;
+  @include breakpoint(medium) {
+    font-size: 85%;
+  }
+  @include breakpoint(large) {
+    font-size: 90%;
+  }
   position: fixed;
   top:0;
   width: 100%;
@@ -133,7 +101,6 @@
     padding: 0;
     margin: 0;
   }
-
   .client-login {
     display: flex;
     flex-direction: column;
@@ -141,7 +108,7 @@
       padding-left: $global-padding;
     }
     li {
-      padding: $global-padding 0 $global-padding 0;
+      padding: $global-padding/2 0 $global-padding/2 0;
     }
     @include breakpoint(medium) {
       padding: 0 20px 0 20px;
@@ -164,14 +131,54 @@
       padding: 0 $global-padding $ac-space/4 $global-padding;
     }
     img {
-      width: 150px;
+      width: 120px;
       @include breakpoint(medium) {
-        width: 200px;
+        width: 150px;
+      }
+      @include breakpoint(large) {
+        width: 180px;
       }
     }
     ul {
       font-weight: $ac-body-bold;
       display: flex;
+      li {
+        margin-left: $global-margin*2;
+        position: relative;
+        @include breakpoint(large) {
+          margin-left: $global-margin*4;
+        }
+        @include breakpoint(large) {
+          &.ac-phone-icon a:before, &.ac-brochure-icon a:before {
+            content: " ";
+            position: absolute;
+            height:18px;
+            left: -22px;
+            //opacity: 0;
+            background-color: $ac-text;
+            transition: background-color 0.3s ease;
+          }
+          &.ac-phone-icon a:before {
+            top: 7px;
+            width: 18px;
+            background-image: url(../img/icons/phone.svg);
+          }
+          &.ac-brochure-icon a:before {
+            top: 6px;
+            width: 14px;
+            background-image: url(../img/icons/brochure.svg);
+          }
+          &.ac-phone-icon a:hover:before, &.ac-brochure-icon a:hover:before {
+            background-color: $ac-logo-blue;
+          }
+        }
+        &:first-child  {
+          margin-left: 0;
+        }
+        &:last-child a:hover {
+          color: $ac-text;
+        }
+      }
     }
   }
   #mainNav {
@@ -200,7 +207,7 @@
         }
       }
       ul li.is-accordion-submenu-parent ul.vertical.is-accordion-submenu.is-active a {
-        background-color: darken($ac-light-blue,8%);
+        background-color: $ac-light-blue;
       }
       @include breakpoint(large) {
         li {
@@ -244,6 +251,37 @@
     .ac-btn:hover {
       color: $ac-text;
     }
+    .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 22px;
+      height: 12px;
+      top: 50%;
+      right: 1rem;
+      margin-top: -3px;
+      background-image: url(../img/icons/arrow-up-down.svg);
+      border: none;
+      transition: transform 0.25s ease-in-out;
+    }
+    .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a::after {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 12px;
+      height: 12px;
+      top: 35%;
+      right: 1rem;
+      margin: auto;
+      border-style: solid;
+      border-color: $ac-text;
+      border-width: 1px 1px 0 0;
+      transform: rotate(45deg);
+      transition: border-color 0.8s ease;
+    }
+    .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a:hover::after {
+      border-color: $ac-logo-blue;
+    }
   }
 }
 
@@ -253,12 +291,29 @@
   top:0;
   width:100%;
 }
-
 .moveDownTripNav {
   top:200px;
 }
-
 #tripDetailsNavWrap {
+  > div {
+    padding: $global-padding/2 0;
+    background-color: $ac-white;
+    max-width: 1600px;
+    border-bottom: solid 1px $ac-border-blue;
+  }
+  .top-bar {
+    background-color: $ac-white;
+  }
+  a:link, a:active, a:visited {
+    color: $ac-link;
+  }
+  a:hover  {
+    color: $ac-hover;
+  }
+  @include breakpoint(medium down) {
+    display: none;
+  }
   transition: all 0.8s ease;
+  font-size:80%;
 }
 
