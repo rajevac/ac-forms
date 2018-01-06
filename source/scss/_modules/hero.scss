@@ -1,0 +1,136 @@
+// ====== Trips =======
+#hero-trip-entry {
+  padding: $global-padding*1.5 0;
+  background-color: $ac-light-blue;
+  p { margin-bottom:0;}
+  .trip-type {
+    margin-bottom:$global-margin/2;
+    text-transform: uppercase;
+    font-size: .75em;
+    padding-left: 40px;
+    position:relative;
+    letter-spacing: 1px;
+    ::before {
+      content: " ";
+      position: absolute;
+      height:24px;
+      width:33px;
+      top: 0;
+      left: 0;
+      background: url(../img/icons/ship.svg) no-repeat;
+      background-size: 25px;
+    }
+  }
+  .promo {
+    p {
+      margin: 0 0 $global-padding/4;
+      &:first-child {
+        background-color: $ac-alert;
+        color: $ac-white-space;
+        display: inline-block;
+        padding: 0 $global-padding/2;
+        font-weight: $ac-body-bold;
+        text-transform: uppercase;
+      }
+      &:last-child {
+        padding-top: $global-padding/4;
+        font-size: .75em;
+      }
+    }
+  }
+  .dates, .price {
+    font-weight: $ac-body-bold;
+    padding-top: $global-padding*1.5;
+    p {
+      margin-bottom: $global-margin/2;
+    }
+  }
+  .dates {
+    span {
+      font-weight: normal;
+    }
+  }
+  .price {
+    p { margin-bottom: 0; }
+    .tax, .price-base {
+      font-weight: $ac-body-normal;
+    }
+    .price-base {
+      font-size: .9em;
+      @include breakpoint(large) {
+        font-size: .8em;
+      }
+    }
+    .regular-price {
+      color: $ac-not-active;
+      text-decoration: line-through;
+    }
+    .discount-price {
+      color: $ac-alert;
+      padding-left: $global-padding/2;
+    }
+  }
+  .flights {
+    padding-top: $global-padding*0.5;
+    p {
+      &:nth-child(odd){
+        padding-top: $global-padding;
+      }
+      &:nth-child(even) {
+        font-size: .9em;
+        @include breakpoint(large) {
+          font-size: .8em;
+        }
+      }
+    }
+    span {
+      font-weight: $ac-body-bold;
+    }
+  }
+  .departure-arrival {
+    padding-top: $global-padding*1.5;
+    span {
+      font-weight: $ac-body-bold;
+    }
+  }
+  .call-to-action {
+    padding-top: $global-padding*2.5;
+    text-align: center;
+    a.phone-icon-blue {
+      position: relative;
+      color:$ac-link;
+      &:before {
+        content: " ";
+        position: absolute;
+        height:18px;
+        left: -22px;
+        top: 4px;
+        width: 18px;
+        background: url(../img/icons/phone-blue.svg) no-repeat;
+      }
+      &:hover{
+        opacity: .8;
+      }
+    }
+
+    a {
+      margin-bottom: $global-padding*1.5;
+    }
+  }
+  .trip-main-image {
+    position: relative;
+    margin-top: $global-margin*1.5;
+    .partner-logos {
+      position: absolute;
+      top:$global-margin/4;
+      left: $global-margin/4;
+      img {
+        max-width: 120px;
+        background-color: $ac-white-space;
+        padding: $global-padding/2;
+        margin-bottom: $global-margin/2;
+      }
+
+    }
+  }
+}

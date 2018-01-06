@@ -1,12 +1,12 @@
 // ====== Prevent a flash of unstyled content ======
 .no-js {
   @include breakpoint(small only) {
-    .title-bar, #mainNav {
+    .title-bar, #mainNavWrap {
       display: none;
     }
   }
   @include breakpoint(medium) {
-    .title-bar, #mainNav {
+    .title-bar, #mainNavWrap {
       display: none;
     }
   }
@@ -88,7 +88,7 @@ body.noScroll {
   width: 100%;
   z-index: 9999;
   transition: all 0.8s ease;
-  background-color: $ac-white;
+  background-color: $ac-white-space;
   border-bottom: solid 1px $ac-shade-blue;
   a:link, a:visited {
     color: $ac-text;
@@ -191,7 +191,7 @@ body.noScroll {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      background-color: $ac-white;
+      background-color: $ac-white-space;
       .dropdown.menu.large-horizontal>li.is-dropdown-submenu-parent>a::after { display: none;}
     }
     ul {
@@ -214,7 +214,7 @@ body.noScroll {
           border-bottom: none;
         }
         a:link, a:visited {
-          border-bottom: solid 4px $ac-white;
+          border-bottom: solid 4px $ac-white-space;
         }
         .is-active a, a:hover, a:active {
           border-bottom: solid 4px $ac-logo-blue;
@@ -297,12 +297,12 @@ body.noScroll {
 #tripDetailsNavWrap {
   > div {
     padding: $global-padding/2 0;
-    background-color: $ac-white;
+    background-color: $ac-white-space;
     max-width: 1600px;
     border-bottom: solid 1px $ac-border-blue;
   }
   .top-bar {
-    background-color: $ac-white;
+    background-color: $ac-white-space;
   }
   a:link, a:active, a:visited {
     color: $ac-link;

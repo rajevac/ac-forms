@@ -1,6 +1,6 @@
 // ===== Colors ======
 $ac-text: #000;
-$ac-white: #fff;
+$ac-white-space: #fff;
 $ac-logo-blue: #0067A5;
 $ac-light-blue: #E2FAFF;
 //$ac-shade-blue: darken($ac-light-blue,10%);
@@ -11,9 +11,13 @@ $ac-hover: #669DFD;
 $ac-yellow: #FFEE5B;
 $ac-orange: #FF9800;
 $ac-brown: #B26A00;
+$ac-alert: #D0021B;
+$ac-not-active: #6B6B6B;
 
 //===== White Space =====
 $ac-space: 2.5em; // 40px
 
 //===== Typography =====
+$ac-body-normal: 400;
 $ac-body-bold: 700;
+$ac-headlines: 500;
