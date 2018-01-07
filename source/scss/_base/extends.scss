@@ -1,0 +1,114 @@
+// 1. Sections' top and bottom padding
+
+%section-padding {
+  padding: $global-padding*3 0;
+  @include breakpoint(medium) {
+    padding: $global-padding*4 0;
+  }
+  @include breakpoint(large) {
+    padding: $global-padding*4 0;
+  }
+}
+
+%header-padding {
+  padding-bottom: $global-padding*2;
+  @include breakpoint(large) {
+    padding-bottom: $global-padding*3;
+  }
+}
+
+// 2. Phone and Brochure Links
+
+%call-to-action {
+  padding-top: $global-padding*2.5;
+  text-align: center;
+  a.phone-icon-blue {
+    position: relative;
+    color:$ac-link;
+    &:before {
+      content: " ";
+      position: absolute;
+      height:18px;
+      left: -22px;
+      top: 5px;
+      width: 18px;
+      background: url(../img/icons/phone-blue.svg) no-repeat;
+    }
+    &:hover{
+      opacity: .8;
+    }
+  }
+
+  a {
+    margin-bottom: $global-padding*1.5;
+  }
+}
+
+// 3. Call to Action in content
+%call-to-action-in-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include breakpoint(large) {
+    padding-top: $global-padding;
+    flex-direction: row;
+    justify-content: center;
+    &:nth-child(2) {
+      padding-left: 30px;
+    }
+  }
+  .ac-btn {
+    width: 100%;
+    margin-bottom: $global-margin/2;
+    @include breakpoint(large) {
+      flex-basis: 25%;
+      margin-right: $global-margin/2;
+      margin-bottom: 0;
+    }
+  }
+  a.phone-icon-blue, a.brochure-icon-blue {
+    display: flex;
+    align-items: center;
+    color: $ac-link;
+    padding-top: $global-padding*2;
+    @include breakpoint(large) {
+      padding-top: 0;
+      justify-content: center;
+    }
+    &:hover {
+      opacity: .8;
+    }
+    img {
+      margin-right: $global-margin/2;
+    }
+  }
+  a.phone-icon-blue {
+    flex-basis: 25%;
+  }
+  a.brochure-icon-blue {
+    flex-basis: 20%;
+  }
+}
+
+// Links in text
+
+%links-main-nav {
+  &:link, &:visited {
+    color: $ac-text;
+  }
+  &:hover, &:active {
+    color: $ac-logo-blue;
+  }
+}
+
+%links-in-text {
+  &:link {
+    color: $ac-link;
+  }
+  &:visited {
+    color: $ac-visited;
+  }
+  &:hover, &:active {
+    opacity: .7;
+  }
+}

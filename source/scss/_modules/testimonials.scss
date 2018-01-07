@@ -1,0 +1,40 @@
+#testimonials {
+  @extend %section-padding;
+  ul {
+    list-style: none;
+    margin: 0;
+    @include breakpoint(large) {
+      display: flex;
+    }
+  }
+  li {
+    padding-bottom: $global-padding*2;
+    @include breakpoint(large) {
+      width: 33%;
+      &:nth-child(3n+1) {
+        padding-right: $global-padding*2;
+      }
+      &:nth-child(3n+2) {
+        padding-left: $global-padding;
+        padding-right: $global-padding;
+      }
+      &:nth-child(3n+3) {
+        padding-left: $global-padding*2;
+      }
+    }
+    p {
+      margin-bottom: $global-margin;
+      &:first-child {
+        font-style: italic;
+        + p {
+          font-weight: $ac-body-bold;
+          margin-bottom: 0;
+          font-size: 120%;
+        }
+      }
+      &:last-child {
+        font-size: .85em;
+      }
+    }
+  }
+}

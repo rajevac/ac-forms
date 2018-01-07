@@ -1,0 +1,338 @@
+// 1. Overview
+// 2. Resource Staff
+// 3. Itinerary
+// 4. Ship !!!! Styles are in hero.scss file in _modules folder
+// 5. Pricing
+// 6. Incentives
+// 7. Testimonials !!!! Styles are in testimonials.scss file in _modules folder
+
+// ===== Overview ========
+#overview {
+  @extend %section-padding;
+  .special-guest {
+    display: flex;
+    align-items: center;
+    padding-bottom: $global-padding*4;
+    .guest-img {
+      width: 100px;
+      img {
+        border-radius: 50%;
+      }
+    }
+    .guest-details {
+      padding-left: $global-padding*1.5;
+      p {
+        line-height: 1.2;
+        margin-bottom: $global-margin/2;
+        &:nth-child(2) {
+          font-weight: $ac-body-bold;
+        }
+      }
+    }
+  }
+  .map {
+    padding-bottom: $global-padding*4;
+  }
+  ul.trip-highlights {
+    list-style: none;
+    margin: 0;
+    padding: 0 $global-padding;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(large) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      @include breakpoint(large) {
+        width: 50%;
+        justify-content: space-between;
+        &:nth-child(odd) {
+          padding-right: $global-padding;
+        }
+        &:nth-child(even) {
+          padding-left: $global-padding;
+        }
+      }
+      img{
+        margin-top: $global-margin/2;
+      }
+      p {
+        padding-left: $global-padding;
+      }
+    }
+
+  }
+}
+
+// ===== Resource Staff ======
+#resource-staff {
+  @extend %section-padding;
+  text-align: center;
+  header {
+    @extend %header-padding;
+  }
+  ul {
+    list-style: none;
+    margin:0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    li {
+      padding-bottom: $global-padding*2;
+      flex-basis:50%;
+      @include breakpoint(large) {
+        flex-basis: 25%;
+      }
+      img {
+        width:100px;
+        border-radius:50%;
+      }
+      .staff-details {
+        a {
+          font-weight: $ac-body-bold;
+        }
+        p {
+          margin: 0;
+          &:first-child {
+            margin-top: $global-margin/2;
+          }
+        }
+      }
+    }
+    + a {
+      margin-top: $global-margin*2;
+      display: block;
+    }
+  }
+}
+
+// ===== Itinerary ======
+#itinerary {
+  @extend %section-padding;
+  header {
+    text-align: center;
+    @extend %header-padding;
+    + ul {
+      list-style: none;
+      margin: 0;
+    }
+  }
+  ul {
+    li {
+      padding-bottom: $global-padding*4;
+      ul li {
+        padding-bottom: $global-padding*2;
+      }
+    }
+    img {
+      margin-top: $global-margin/4;
+    }
+    .day-highlight {
+      h3 {
+        padding-bottom: $global-padding;
+      }
+      p:first-child {
+        text-transform: uppercase;
+        margin-bottom: $global-margin/2;
+        line-height: 1;
+      }
+    }
+  }
+  .call-to-action {
+    @extend %call-to-action-in-content
+  }
+}
+
+
+// ===== Pricing ======
+
+#pricing {
+  @extend %section-padding;
+  header {
+    text-align: center;
+    padding-bottom: $global-padding*3;
+    p {
+      margin-bottom: $global-margin;
+    }
+    .important-info {
+      font-size: .85em;
+      color: $ac-alert;
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: $global-padding;
+      border-top: solid 1px $ac-border-blue;
+      &:last-child {
+        border-bottom: solid 1px $ac-border-blue;
+      }
+      &:nth-child(odd) {
+        background-color: $ac-light-blue;
+      }
+      &:nth-child(even) {
+        background-color: lighten($ac-light-blue, 3.5%);
+      }
+      .price {
+        text-align: right;
+        .sold-out {
+          span:first-child {
+            color: $ac-alert;
+            text-transform: uppercase;
+          }
+        }
+        .discount {
+          span:first-child {
+            color: $ac-not-active;
+            text-decoration: line-through;
+          }
+          span:last-child {
+            color: $ac-alert;
+          }
+        }
+        a {
+          @extend %links-in-text;
+        }
+      }
+    }
+  }
+  .cabin-categories-link {
+    @extend %section-padding;
+    text-align: center;
+    a {
+      @extend %links-in-text;
+    }
+  }
+  .call-to-action {
+    @extend %call-to-action-in-content;
+    .ac-btn, a.phone-icon-blue {
+      flex-basis: 30%;
+    }
+  }
+  .flights-details {
+    @extend %section-padding;
+    list-style:none;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    li {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border-top: solid 1px $ac-border-blue;
+      &:last-child {
+        border-bottom: solid 1px $ac-border-blue;
+      }
+    }
+    span {
+      font-size: .85em;
+    }
+    .flight-text {
+      flex-basis: 50%;
+    }
+    .flight-price {
+      flex-basis: 50%;
+      text-align: right;
+    }
+  }
+
+  .additional-info {
+    @extend %section-padding;
+    padding-top: 0;
+    @include breakpoint(medium) {
+      padding-top: 0;
+    }
+    @include breakpoint(large) {
+      padding-top: 0;
+    }
+  }
+}
+
+// ======= Incentives ========
+#incentives {
+  @extend %section-padding;
+  header { text-align: center; padding-bottom: $global-padding*3; }
+  h3 { margin-bottom: $global-margin }
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+    li {
+      padding-bottom: $global-padding*2;
+      img { margin-bottom: $global-margin*2;}
+      @include breakpoint(medium) {
+        flex-basis: 50%;
+        padding-bottom: $global-padding*3;
+        &:nth-child(odd) {
+          padding-right: $global-padding;
+        }
+        &:nth-child(even) {
+          padding-left: $global-padding;
+        }
+      }
+      @include breakpoint(large) {
+        flex-basis: 33%;
+        &:nth-child(odd) {
+          padding-right: 0;
+        }
+        &:nth-child(even) {
+          padding-left: 0;
+        }
+        &:nth-child(3n+1) {
+          padding-right: $global-padding*2;
+        }
+        &:nth-child(3n+2) {
+          padding-left: $global-padding;
+          padding-right: $global-padding;
+        }
+        &:nth-child(3n+3) {
+          padding-left: $global-padding*2;
+        }
+      }
+      img { width: 75px; }
+    }
+  }
+  .bagpipers {
+    @extend %section-padding;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint(medium) {
+      width:80%;
+      margin: 0 auto;
+    }
+    @include breakpoint(large) {
+      width:60%;
+    }
+    img { width: 175px; }
+    .bagpipers-text {
+      padding-left: $global-padding*2;
+    }
+  }
+  .call-to-action {
+    @extend %call-to-action-in-content;
+    .ac-btn, a.phone-icon-blue {
+      flex-basis: 20%;
+    }
+  }
+}
+
+
+

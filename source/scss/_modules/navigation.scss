@@ -42,7 +42,10 @@
   top: 12px;
   transition: all .5s ease-in-out;
   @include breakpoint(small only) {
-    top: -8px;
+    top: -6px;
+  }
+  @include breakpoint(medium only) {
+    top: 10px;
   }
 }
 #mainNavWrap.active-toggle #menu-link .ac-menu-icon:before {
@@ -90,11 +93,8 @@ body.noScroll {
   transition: all 0.8s ease;
   background-color: $ac-white-space;
   border-bottom: solid 1px $ac-shade-blue;
-  a:link, a:visited {
-    color: $ac-text;
-  }
-  a:hover, a:active {
-    color: $ac-logo-blue;
+  a {
+    @extend %links-main-nav;
   }
   ul {
     list-style: none;
@@ -129,6 +129,7 @@ body.noScroll {
     padding: $ac-space/4 $global-padding/2;
     @include breakpoint(medium) {
       padding: 0 $global-padding $ac-space/4 $global-padding;
+      align-items: flex-end;
     }
     img {
       width: 120px;
@@ -188,11 +189,15 @@ body.noScroll {
     @include breakpoint(large) {
       padding-left: $ac-space/2;
       padding-right: $ac-space/2;
+      //padding-bottom: $global-padding/2;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       background-color: $ac-white-space;
       .dropdown.menu.large-horizontal>li.is-dropdown-submenu-parent>a::after { display: none;}
+      .dropdown.menu a {
+        padding-bottom: $global-padding*1.2;
+      }
     }
     ul {
       li {
@@ -290,16 +295,19 @@ body.noScroll {
   position:fixed;
   top:0;
   width:100%;
+  z-index: 8888;
 }
 .moveDownTripNav {
   top:200px;
 }
 #tripDetailsNavWrap {
+  border-bottom: solid 1px $ac-shade-blue;
+  background-color: $ac-white-space;
   > div {
-    padding: $global-padding/2 0;
+    padding: $global-padding/2 $global-padding;
     background-color: $ac-white-space;
-    max-width: 1600px;
-    border-bottom: solid 1px $ac-border-blue;
+    //max-width: 1600px;
+
   }
   .top-bar {
     background-color: $ac-white-space;
