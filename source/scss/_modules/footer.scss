@@ -1,0 +1,178 @@
+#footer {
+  border-top: solid 1px $ac-border-blue;
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  .tripAdv-awards-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include breakpoint(medium) {
+       justify-content: space-between;
+    }
+    @include breakpoint(large) {
+      padding-bottom: $global-padding*2;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .awards {
+      padding: $global-padding*2 0;
+      display: flex;
+      flex-direction: column;
+      @include breakpoint(large) {
+        padding: 0;
+        flex-direction: row;
+        flex-basis: 80%;
+        justify-content: flex-end;
+      }
+      p {
+        margin-bottom: 0;
+        text-align: center;
+        font-weight: $ac-body-bold;
+      }
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include breakpoint(medium) {
+          justify-content: space-between;
+        }
+        li {
+          padding: $global-padding;
+          flex-basis: 50%;
+          text-align: center;
+          @include breakpoint(medium) {
+            flex-basis: unset;
+          }
+          @include breakpoint(large) {
+            padding-right: 0;
+            padding-left: $global-padding*2;
+          }
+          span {
+            position: absolute;
+            left: -5000px;
+          }
+        }
+      }
+    }
+    .tripAdv {
+      padding: $global-padding*2 0;
+      @include breakpoint(large) {
+        padding: 0;
+        margin: 0;
+        flex-basis: 20%;
+      }
+    }
+  }
+  .social-newsletter-wrap {
+    > div + div ul {
+      border-top: solid 1px $ac-logo-blue;
+      margin-top: $global-margin*2;
+    }
+    background-color: $ac-light-blue;
+    padding: $global-padding*2 0;
+    ul {
+      display: flex;
+      justify-content: center;
+      padding: $global-padding*2 0 0 0;
+      li {
+        margin: $global-margin/2;
+        padding: $global-padding/2;
+        a:hover {
+          opacity: .8;
+        }
+        span {
+          position: absolute;
+          left: 5000px;
+        }
+      }
+    }
+    form {
+      .ac-btn {
+        width: 100%;
+      }
+      @include breakpoint(large) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        input { margin-bottom: 0; }
+        div {
+          flex-basis: 60%;
+          padding-left: $global-padding;
+          padding-right: $global-padding/2;
+        }
+        button {
+          flex-basis: 40%;
+        }
+      }
+    }
+  }
+  nav {
+    padding: $global-padding*2 0;
+    @include breakpoint(medium) {
+      font-size: .85em;
+    }
+    @include breakpoint(large) {
+      font-size: .8em;
+      padding: $global-padding*2 0 $global-padding 0;
+    }
+  }
+  nav > ul {
+    @include breakpoint(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    a {
+      &:link, &:visited {
+        color: $ac-text;
+      }
+      &:hover, &:active {
+        color:$ac-logo-blue;
+      }
+    }
+    li {
+      font-weight: $ac-body-bold;
+      margin: $global-margin/4 0;
+      padding: $global-padding/2 $global-padding;
+      @include breakpoint(medium) {
+        flex-basis: 50%;
+      }
+      @include breakpoint(large) {
+        flex-basis: 25%;
+      }
+      ul {
+        padding: 0 0 $global-padding 0;
+        li {
+          font-weight: $ac-body-normal;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  .copyright-wrap {
+    border-top: solid 1px $ac-border-blue;
+    font-size: .75em;
+    padding: $global-padding 0;
+    p {
+      //margin-bottom: 0;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    a {
+      &:link, &:visited {
+        color: $ac-text;
+      }
+      &:hover, &:active {
+        color:$ac-logo-blue;
+      }
+    }
+  }
+}

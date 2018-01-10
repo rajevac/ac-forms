@@ -1,0 +1,12 @@
+[type=color], [type=date], [type=datetime-local],
+[type=datetime], [type=email], [type=month],
+[type=number], [type=password], [type=search],
+[type=tel], [type=text], [type=time], [type=url],
+[type=week], textarea {
+  border: solid 1px $ac-border-blue;
+  border-radius: 4px;
+}
+
+label {
+  font-size: 100%;
+}

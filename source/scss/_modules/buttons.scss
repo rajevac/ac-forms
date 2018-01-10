@@ -1,7 +1,6 @@
 a:link {
   transition: all 0.3s ease;
 }
-
 .ac-btn {
   background: $ac-yellow;
   background-image: -webkit-linear-gradient(top, $ac-yellow, $ac-orange);
@@ -21,6 +20,7 @@ a:link {
   align-items: center;
   justify-content: center;
   height: 30px;
+  cursor: pointer;
 }
 
 .ac-btn:hover {
@@ -32,4 +32,11 @@ a:link {
   background-image: -o-linear-gradient(top, darken($ac-yellow,20%), darken($ac-orange, 5%));
   background-image: linear-gradient(to bottom, darken($ac-yellow,20%), darken($ac-orange, 5%));
   text-decoration: none;
+}
+button.ac-btn {
+  padding: 12px 40px 26px 40px;
+  cursor: pointer;
+  @include breakpoint(large) {
+    padding: 10px 40px 28px 40px;
+  }
 }

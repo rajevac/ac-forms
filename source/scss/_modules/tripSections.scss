@@ -334,5 +334,15 @@
   }
 }
 
-
+.share-page-top-wrap {
+  text-align: center;
+  @extend %section-padding;
+  padding-top: 0;
+  .share {
+    padding-bottom: $global-padding;
+  }
+  .page-top {
+    padding-top: $global-padding;
+  }
+}
 
