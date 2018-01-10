@@ -14,6 +14,7 @@
     @include breakpoint(large) {
       padding-bottom: $global-padding*2;
       justify-content: center;
+      align-items: flex-end;
       flex-direction: row;
       flex-wrap: wrap;
     }
@@ -69,25 +70,24 @@
     }
   }
   .social-newsletter-wrap {
-    > div + div ul {
-      border-top: solid 1px $ac-logo-blue;
-      margin-top: $global-margin*2;
-    }
     background-color: $ac-light-blue;
     padding: $global-padding*2 0;
-    ul {
-      display: flex;
-      justify-content: center;
-      padding: $global-padding*2 0 0 0;
-      li {
-        margin: $global-margin/2;
-        padding: $global-padding/2;
-        a:hover {
-          opacity: .8;
+    .social {
+      border-top: solid 1px $ac-logo-blue;
+      margin-top: $global-margin*2;
+      ul {
+        display: flex;
+        justify-content: center;
+        li {
+          margin: $global-margin/2;
+          padding: $global-padding/2;
         }
         span {
           position: absolute;
-          left: 5000px;
+          left: -5000px;
+        }
+        a:hover {
+          opacity: .8;
         }
       }
     }

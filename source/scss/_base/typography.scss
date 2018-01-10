@@ -16,5 +16,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 p {
   margin-bottom: 1.5em;
 }
+a {
+  color: $ac-link;
+  transition: all .3s ease;
+}
+a:visited {
+  color: $ac-visited;
+}
+a:focus, a:hover {
+  color: $ac-hover;
+  opacity: 1;
+}
 
 

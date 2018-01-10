@@ -66,7 +66,7 @@
       margin-bottom: 0;
     }
   }
-  a.phone-icon-blue, a.brochure-icon-blue {
+  a.phone-icon-blue, a.brochure-icon-blue, a.arrow-icon-blue {
     display: flex;
     align-items: center;
     color: $ac-link;
@@ -76,7 +76,7 @@
       justify-content: center;
     }
     &:hover {
-      opacity: .8;
+      opacity: .7;
     }
     img {
       margin-right: $global-margin/2;

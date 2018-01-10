@@ -11,9 +11,9 @@
 //    }
 //}
 $(document).ready(function(){
-    //====== initiate Foundation =======
+
     $(document).foundation();
-    console.log('app.js connected and Foundation Sctips is running!');
+    //console.log('app.js connected and Foundation Sctips is running!');
 
 
     var mainNav = $('#mainNavWrap');

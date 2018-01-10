@@ -224,10 +224,12 @@
     @extend %section-padding;
     list-style:none;
     margin:0;
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    //flex-direction: column;
     li {
-      flex-direction: column;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
       border-top: solid 1px $ac-border-blue;
@@ -240,10 +242,16 @@
     }
     .flight-text {
       flex-basis: 50%;
+      @include breakpoint(medium) {
+        flex-basis: 63%;
+      }
     }
     .flight-price {
       flex-basis: 50%;
       text-align: right;
+      @include breakpoint(medium) {
+        flex-basis: 35%;
+      }
     }
   }
 
@@ -287,7 +295,7 @@
         }
       }
       @include breakpoint(large) {
-        flex-basis: 33%;
+        flex-basis: 32%;
         &:nth-child(odd) {
           padding-right: 0;
         }
@@ -343,6 +351,14 @@
   }
   .page-top {
     padding-top: $global-padding;
+  }
+  .call-to-action {
+    @extend %call-to-action-in-content;
+    a.arrow-icon-blue {
+      img {
+        padding-right: $global-padding/4;
+      }
+    }
   }
 }
 
