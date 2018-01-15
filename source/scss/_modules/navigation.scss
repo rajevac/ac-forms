@@ -302,6 +302,7 @@ body.noScroll {
 }
 #tripDetailsNavWrap {
   border-bottom: solid 1px $ac-shade-blue;
+  border-top: solid 1px $ac-shade-blue;
   background-color: $ac-white-space;
   > div {
     padding: $global-padding/2 $global-padding;

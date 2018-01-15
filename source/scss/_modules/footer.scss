@@ -158,13 +158,17 @@
     border-top: solid 1px $ac-border-blue;
     font-size: .75em;
     padding: $global-padding 0;
-    p {
-      //margin-bottom: 0;
-    }
     div {
       display: flex;
       align-items: center;
       flex-direction: column;
+      @include breakpoint(large) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: unset;
+        p, a { flex-basis: 50%;}
+        a { text-align: right;}
+      }
     }
     a {
       &:link, &:visited {

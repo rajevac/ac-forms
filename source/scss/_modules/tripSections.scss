@@ -150,7 +150,7 @@
 
 // ===== Pricing ======
 
-#pricing {
+.pricing {
   @extend %section-padding;
   header {
     text-align: center;
@@ -184,7 +184,7 @@
       &:nth-child(even) {
         background-color: lighten($ac-light-blue, 3.5%);
       }
-      .price {
+      .right {
         text-align: right;
         .sold-out {
           span:first-child {

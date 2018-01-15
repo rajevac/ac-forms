@@ -6,14 +6,32 @@
     padding: $global-padding*4 0;
   }
   @include breakpoint(large) {
-    padding: $global-padding*4 0;
+    padding: $global-padding*6 0;
   }
 }
+
+%section-padding-half {
+  padding: $global-padding*1.5 0;
+  @include breakpoint(medium) {
+    padding: $global-padding*2 0;
+  }
+  @include breakpoint(large) {
+    padding: $global-padding*3 0;
+  }
+}
+
 
 %header-padding {
   padding-bottom: $global-padding*2;
   @include breakpoint(large) {
     padding-bottom: $global-padding*3;
+  }
+}
+
+%headline-padding {
+  padding-bottom: $global-padding;
+  @include breakpoint(medium) {
+    padding-bottom: $global-padding*2;
   }
 }
 

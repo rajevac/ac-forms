@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="73px" height="73px" viewBox="0 0 73 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="73" height="73" rx="4"></rect>
+        <rect id="path-2" x="8" y="8" width="58" height="58"></rect>
+    </defs>
+    <g id="Ship" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-220.000000, -1939.000000)">
+        <g id="Group" transform="translate(220.000000, 1939.000000)">
+            <g id="Rectangle-2">
+                <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="72" height="72" rx="4"></rect>
+            </g>
+            <g id="Rectangle-2">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <rect stroke="#979797" stroke-width="1" x="8.5" y="8.5" width="57" height="57"></rect>
+            </g>
+            <circle id="Oval" stroke="#979797" fill="#D8D8D8" cx="51.5" cy="21.5" r="6.5"></circle>
+            <path d="M9,45 C16.4419652,45 17.3405642,43 24.9129186,43 C32.485273,43 30.5642051,45 36.9163336,45 C43.2684621,45 45.464434,43 52.3533315,43 C59.242229,43 61.2382708,45 65,45" id="Path-3-Copy" stroke="#979797"></path>
+            <path d="M9,56.3286677 C15.6369295,56.3286677 23.0726141,55 36.248686,55 C49.424758,55 57.2728907,57 65,57" id="Path-4-Copy-6" stroke="#979797"></path>
+            <path d="M9,53.9930016 C15.6369295,53.9930016 23.0726141,52 36.248686,52 C49.424758,52 57.2728907,55 65,55" id="Path-4-Copy-7" stroke="#979797"></path>
+            <path d="M65,47.3286677 L9,48 C16.7271093,48 24.575242,46 37.751314,46 C50.9273859,46 58.3630705,47.3286677 65,47.3286677 Z" id="Path-4-Copy-8" stroke="#979797"></path>
+            <path d="M65,58.3286677 L9,59 C16.7271093,59 24.575242,57 37.751314,57 C50.9273859,57 58.3630705,58.3286677 65,58.3286677 Z" id="Path-4-Copy-9" stroke="#979797"></path>
+            <path d="M65,62.3286677 L9,63 C16.7271093,63 24.575242,61 37.751314,61 C50.9273859,61 58.3630705,62.3286677 65,62.3286677 Z" id="Path-4-Copy-10" stroke="#979797"></path>
+            <path d="M9,51.9930016 C15.6369295,51.9930016 23.0726141,50 36.248686,50 C49.424758,50 57.2728907,53 65,53" id="Path-4-Copy-11" stroke="#979797"></path>
+        </g>
+    </g>
+</svg>

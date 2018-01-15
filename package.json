@@ -32,6 +32,7 @@
     "require-dir": "^0.3.1"
   },
   "dependencies": {
-    "foundation-sites": "^6.4.4-rc1"
+    "foundation-sites": "^6.4.4-rc1",
+    "photo-sphere-viewer": "^3.2.4"
   }
 }

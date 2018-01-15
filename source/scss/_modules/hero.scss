@@ -119,6 +119,9 @@
 
     }
   }
+  .share-hero-section {
+    padding-top: $global-padding;
+  }
 }
 
 
@@ -160,5 +163,11 @@
     a {
       @extend %links-in-text;
     }
+  }
+}
+
+.hero-top {
+  @include breakpoint(large) {
+    margin: 0 auto;
   }
 }

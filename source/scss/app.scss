@@ -136,6 +136,7 @@
 @import '_base/mixins';
 @import '_base/extends';
 @import '_base/typography';
+@import '_base/responsive-video';
 
 /*------------------------------------*\
   #MODULES
@@ -146,6 +147,7 @@
 @import '_modules/navigation';
 @import '_modules/hero';
 @import '_modules/tripSections';
+@import '_modules/shipSections';
 @import '_modules/testimonials';
 
 /*------------------------------------*\
