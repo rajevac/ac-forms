@@ -12,61 +12,6 @@
   }
 }
 
-// ====== Menu Icon and Animation ========
-
-#menu-link {
-  font-size:90%;
-  display: inline-block;
-  position: relative;
-  padding: 0 30px 0 0;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: $ac-text;
-  transition: color .5s ease-in-out;
-  @include breakpoint(small only) {
-    span:first-child {
-      display: none;
-    }
-  }
-}
-
-#menu-link .ac-menu-icon, #menu-link .ac-menu-icon:before, #menu-link .ac-menu-icon:after {
-  background-color: $ac-text;
-  border-radius: 2px;
-  width:22px;
-  height: 2px;
-  display: inline-block;
-  position: absolute;
-  content: '';
-  right: 0;
-  top: 12px;
-  transition: all .5s ease-in-out;
-  @include breakpoint(small only) {
-    top: -6px;
-  }
-  @include breakpoint(medium only) {
-    top: 10px;
-  }
-}
-#mainNavWrap.active-toggle #menu-link .ac-menu-icon:before {
-  top: 0px;
-  transform: rotate(45deg);
-}
-#mainNavWrap.active-toggle #menu-link .ac-menu-icon:after {
-  top: 0px;
-  transform: rotate(-45deg);
-}
-#mainNavWrap.active-toggle #menu-link .ac-menu-icon {
-  background-color: transparent;
-}
-#menu-link .ac-menu-icon:before {
-  top: -7px;
-}
-
-#menu-link .ac-menu-icon:after {
-  top: 7px;
-}
-
 // ======= Prevent Scrolling on mobile when menu is opened ========
 body.noScroll {
   @include breakpoint(medium down) {
@@ -82,14 +27,11 @@ body.noScroll {
   font-size: 80%;
   @include breakpoint(medium) {
     font-size: 85%;
+    padding-top: $global-padding/2;
   }
   @include breakpoint(large) {
     font-size: 90%;
   }
-  position: fixed;
-  top:0;
-  width: 100%;
-  z-index: 9999;
   transition: all 0.8s ease;
   background-color: $ac-white-space;
   border-bottom: solid 1px $ac-shade-blue;
@@ -101,27 +43,6 @@ body.noScroll {
     padding: 0;
     margin: 0;
   }
-  .client-login {
-    display: flex;
-    flex-direction: column;
-    a {
-      padding-left: $global-padding;
-    }
-    li {
-      padding: $global-padding/2 0 $global-padding/2 0;
-    }
-    @include breakpoint(medium) {
-      padding: 0 20px 0 20px;
-      flex-direction: row;
-      text-transform: uppercase;
-      font-size: 70%;
-      justify-content: flex-end;
-      li {
-        padding: 0;
-        margin-left: $ac-space/2;
-      }
-    }
-  }
   .masthead {
     display: flex;
     justify-content: space-between;
@@ -129,7 +50,6 @@ body.noScroll {
     padding: $ac-space/4 $global-padding/2;
     @include breakpoint(medium) {
       padding: 0 $global-padding $ac-space/4 $global-padding;
-      align-items: flex-end;
     }
     img {
       width: 120px;
@@ -155,7 +75,6 @@ body.noScroll {
             position: absolute;
             height:18px;
             left: -22px;
-            //opacity: 0;
             background-color: $ac-text;
             transition: background-color 0.3s ease;
           }
@@ -164,165 +83,13 @@ body.noScroll {
             width: 18px;
             background-image: url(../img/icons/phone.svg);
           }
-          &.ac-brochure-icon a:before {
-            top: 6px;
-            width: 14px;
-            background-image: url(../img/icons/brochure.svg);
-          }
-          &.ac-phone-icon a:hover:before, &.ac-brochure-icon a:hover:before {
+          &.ac-phone-icon a:hover:before {
             background-color: $ac-logo-blue;
           }
         }
-        &:first-child  {
-          margin-left: 0;
-        }
-        &:last-child a:hover {
-          color: $ac-text;
-        }
       }
-    }
-  }
-  #mainNav {
-    display: flex;
-    flex-direction: column;
-    background-color: $ac-light-blue;
-    @include breakpoint(large) {
-      padding-left: $ac-space/2;
-      padding-right: $ac-space/2;
-      //padding-bottom: $global-padding/2;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      background-color: $ac-white-space;
-      .dropdown.menu.large-horizontal>li.is-dropdown-submenu-parent>a::after { display: none;}
-      .dropdown.menu a {
-        padding-bottom: $global-padding*1.2;
-      }
-    }
-    ul {
-      li {
-        border-bottom: solid 1px $ac-border-blue;
-      }
-      .vertical.is-accordion-submenu.is-active  {
-        a {
-          background-color: darken($ac-light-blue,5%);
-        }
-        li:last-child {
-          border: none;
-        }
-      }
-      ul li.is-accordion-submenu-parent ul.vertical.is-accordion-submenu.is-active a {
-        background-color: $ac-light-blue;
-      }
-      @include breakpoint(large) {
-        li {
-          border-bottom: none;
-        }
-        a:link, a:visited {
-          border-bottom: solid 4px $ac-white-space;
-        }
-        .is-active a, a:hover, a:active {
-          border-bottom: solid 4px $ac-logo-blue;
-        }
-        li.current-section a {
-          border-bottom: solid 4px $ac-logo-blue;
-        }
-        .is-dropdown-submenu-parent .first-sub {
-          background-color: $ac-light-blue;
-          a:hover, li.is-dropdown-submenu-parent.is-active {
-            background-color: darken($ac-light-blue,5%);
-          }
-        }
-        .is-dropdown-submenu {
-          border: none;
-          background-color: darken($ac-light-blue,5%);
-          a {
-            border: none;
-            border-bottom: solid 1px $ac-border-blue;
-          }
-        }
-        .accordion-menu li {
-          border-bottom: solid 1px $ac-border-blue;
-        }
-      }
-
-    }
-    .ac-btn {
-      margin: $global-margin;
-      @include breakpoint(large) {
-        margin: 0px;
-      }
-    }
-    .ac-btn:hover {
-      color: $ac-text;
-    }
-    .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after {
-      display: block;
-      position: absolute;
-      content: '';
-      width: 22px;
-      height: 12px;
-      top: 50%;
-      right: 1rem;
-      margin-top: -3px;
-      background-image: url(../img/icons/arrow-up-down.svg);
-      border: none;
-      transition: transform 0.25s ease-in-out;
-    }
-    .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a::after {
-      display: block;
-      position: absolute;
-      content: '';
-      width: 12px;
-      height: 12px;
-      top: 35%;
-      right: 1rem;
-      margin: auto;
-      border-style: solid;
-      border-color: $ac-text;
-      border-width: 1px 1px 0 0;
-      transform: rotate(45deg);
-      transition: border-color 0.8s ease;
-    }
-    .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a:hover::after {
-      border-color: $ac-logo-blue;
     }
   }
 }
 
-// ======= Trip Details Navigation ========
-.fixTripNav {
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index: 8888;
-}
-.moveDownTripNav {
-  top:200px;
-}
-#tripDetailsNavWrap {
-  border-bottom: solid 1px $ac-shade-blue;
-  border-top: solid 1px $ac-shade-blue;
-  background-color: $ac-white-space;
-  > div {
-    padding: $global-padding/2 $global-padding;
-    background-color: $ac-white-space;
-    //max-width: 1600px;
-
-  }
-  .top-bar {
-    background-color: $ac-white-space;
-  }
-  a:link, a:active, a:visited {
-    color: $ac-link;
-  }
-  a:hover  {
-    color: $ac-hover;
-  }
-  @include breakpoint(medium down) {
-    display: none;
-  }
-  transition: all 0.8s ease;
-  font-size:80%;
-}
 

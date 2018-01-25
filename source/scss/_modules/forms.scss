@@ -10,3 +10,13 @@
 label {
   font-size: 100%;
 }
+
+.ac-form {
+  @extend %section-padding-half;
+  header {
+    @extend %header-padding;
+  }
+  .btn-wrap {
+    padding-top: $global-padding;
+  }
+}
